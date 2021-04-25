@@ -14,7 +14,7 @@ package org.rabbit.jp0.practise.BinarySearch.example;
  *
  * Best case performance: O(1)
  */
-public class MyBinarySearch {
+public class NormalBinarySearch {
 
     public int binarySearch(int[] inputArr, int key) {
         int start = 0;
@@ -35,7 +35,7 @@ public class MyBinarySearch {
 
     public static void main(String[] args) {
 
-        MyBinarySearch mbs = new MyBinarySearch();
+        NormalBinarySearch mbs = new NormalBinarySearch();
         int[] arr = {2, 4, 6, 8, 10, 12, 14, 16};
         System.out.println("Key 14's position: "+mbs.binarySearch(arr, 14));
         int[] arr1 = {6,34,78,123,432,900};

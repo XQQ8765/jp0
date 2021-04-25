@@ -24,7 +24,7 @@ package org.rabbit.jp0.practise.BinarySearch.example;
  *
  * http://www.java2novice.com/java-search-algorithms/binary-search-recursion/
  */
-public class MyRecursiveBinarySearch {
+public class RecursiveBinarySearch {
 
     public static int recursiveBinarySearch(int[] sortedArray, int start, int end, int key) {
 
