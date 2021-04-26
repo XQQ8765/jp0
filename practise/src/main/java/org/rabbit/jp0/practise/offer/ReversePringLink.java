@@ -36,13 +36,14 @@ public class ReversePringLink {
         }
         return list;
     }
-}
 
-class ListNode {
-    int val;
-    ListNode next = null;
+    class ListNode {
+        int val;
+        ListNode next = null;
 
-    ListNode(int val) {
-        this.val = val;
+        ListNode(int val) {
+            this.val = val;
+        }
     }
 }
+
