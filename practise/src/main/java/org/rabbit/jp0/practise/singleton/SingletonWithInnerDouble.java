@@ -5,7 +5,7 @@ package org.rabbit.jp0.practise.singleton;
  * 第七种（双重校验锁）
  */
 public class SingletonWithInnerDouble {
-    private static SingletonWithInnerDouble INSTANCE;
+    private volatile static SingletonWithInnerDouble INSTANCE;
     private SingletonWithInnerDouble() {
     }
 
