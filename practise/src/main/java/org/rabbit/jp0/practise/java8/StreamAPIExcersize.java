@@ -57,7 +57,7 @@ public class StreamAPIExcersize {
                 .map(t -> t.name)
                 .distinct().sorted().forEach(System.out::println);
 
-        //返回所有交易员的姓名字符串，按字母顺序排序
+        //返回所有交易员的姓名字符串，按字母顺序排序，结果: ------112334aaaaaaddddddeeeeeerrrrrrtttttt
         System.out.println("---------------返回所有交易员的姓名字符串，按字母顺序排序:");
         String connectedNameChars = transactions0.stream().map(t -> t.trade.name)
                 .flatMap(name -> name.chars().mapToObj(c -> (char) c))
@@ -65,6 +65,24 @@ public class StreamAPIExcersize {
                 .map(c -> c.toString())
                 .collect(Collectors.joining());
         System.out.println(connectedNameChars);
+
+        //有没有交易员是在Beijing工作的？
+        boolean exists = transactions0.stream().anyMatch(t -> t.trade.city == "Beijing");
+        System.out.println("---------------有没有交易员是在Beijing工作的:" + exists);
+
+        //打印生活在Beijing的交易员的所有交易额
+        int totalV = transactions0.stream().filter(t -> t.trade.city == "Beijing").map(t -> t.value)
+                .reduce(Integer::sum).get();
+        System.out.println("---------------在Beijing工作的交易员成交总金额:" + totalV);
+
+        //所有交易中，最高的交易额是多少
+        //int maxV = transactions0.stream().map(t -> t.value).reduce(Integer::max).get();
+        int maxV = transactions0.stream().map(t -> t.value).max(Integer::compareTo).get();
+        System.out.println("---------------所有交易中，最高的交易额是:" + maxV);
+
+        //找到交易额最小的交易
+        Transaction minTransaction = transactions0.stream().min( (t1, t2) -> Integer.compare(t1.value, t2.value)).get();
+        System.out.println("---------------交易额最小的交易:" + minTransaction);
 
     }
 

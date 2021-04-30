@@ -31,9 +31,9 @@ public class HSBCPMO {
                     int[] s1Arr = Stream.of(s1.split("-")).mapToInt(s -> Integer.parseInt(s)).toArray();
                     int[] s2Arr = Stream.of(s2.split("-")).mapToInt(s -> Integer.parseInt(s)).toArray();
                     if (s1Arr[0] == s2Arr[0]) {
-                        return -1 * (s1Arr[1] - s2Arr[1]);
+                        return Integer.compare(s2Arr[1], s1Arr[1]);
                     }
-                    return s1Arr[0] - s2Arr[0];
+                    return Integer.compare(s2Arr[0], s1Arr[0]);
                 }
         ).forEach(System.out::println);
     }
