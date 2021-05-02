@@ -3,10 +3,10 @@ package org.rabbit.jp0.practise.java8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * JAVA8新特性之StreamAPI简单练习 https://blog.csdn.net/K_520_W/article/details/83032889
+ * JAVA8新特性之中间操作二　https://blog.csdn.net/K_520_W/article/details/82988940
  */
 public class StreamAPIExcersize {
     public static void main(String[] args) {
@@ -61,7 +61,7 @@ public class StreamAPIExcersize {
         System.out.println("---------------返回所有交易员的姓名字符串，按字母顺序排序:");
         String connectedNameChars = transactions0.stream().map(t -> t.trade.name)
                 .flatMap(name -> name.chars().mapToObj(c -> (char) c))
-                .sorted((c1, c2) -> c1.compareTo(c2))
+                .sorted(Character::compareTo)
                 .map(c -> c.toString())
                 .collect(Collectors.joining());
         System.out.println(connectedNameChars);
