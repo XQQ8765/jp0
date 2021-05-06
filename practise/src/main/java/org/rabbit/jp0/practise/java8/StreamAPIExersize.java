@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  * JAVA8新特性之StreamAPI简单练习 https://blog.csdn.net/K_520_W/article/details/83032889
  * JAVA8新特性之中间操作二　https://blog.csdn.net/K_520_W/article/details/82988940
  */
-public class StreamAPIExcersize {
+public class StreamAPIExersize {
     public static void main(String[] args) {
         test1();
         testEmployees();
